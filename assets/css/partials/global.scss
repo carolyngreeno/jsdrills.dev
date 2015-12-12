@@ -1,0 +1,23 @@
+.global-nav {
+	padding: 5px 50px;
+	margin-bottom: 3rem;
+	background-color: #333222;
+
+	h6 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		text-align: left;
+		margin-bottom: 0;
+	}
+
+	a {
+		color: #fff;
+		text-decoration: none;
+
+		&:hover, &:active {
+			color: #ccc;
+		}
+	}
+}

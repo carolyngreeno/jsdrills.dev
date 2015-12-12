@@ -1,0 +1,1856 @@
+/*! FilamentGroup.com - v0.1.0 - 2015-10-02
+* http://filamentgroup.com/
+* Copyright (c) 2015 Filament Group */
+
+html {
+    -webkit-text-size-adjust: 100%;
+    word-wrap: break-word
+}
+body {
+    font-family: sans-serif;
+    background: #fff;
+    margin: 0;
+    color: #333;
+    font-weight: 300
+}
+.fonts-loaded body {
+    font-family: Source Sans Pro, sans-serif
+}
+a:link {
+    color: #007be0;
+    font-weight: 600
+}
+a:visited {
+    color: #646BBC
+}
+a:hover,
+a:active,
+a:focus {
+    color: #007be0;
+    text-decoration: underline
+}
+a img {
+    border: 0
+}
+input.text,
+textarea {
+    display: block
+}
+span.required {
+    color: red
+}
+#content #overview p.note,
+#content p.note {
+    padding: 10px;
+    border: 1px solid #8cc264;
+    margin: 1.5em 0
+}
+#content #overview p.outdated,
+#content p.outdated {
+    border: 1px solid #840505;
+    padding: 10px;
+    margin: 1.5em 0
+}
+#home #header,
+#header {
+    position: static;
+    background-color: #247201;
+    background-position: left -7em;
+    padding: 0;
+    overflow: hidden
+}
+#home #header {
+    background-position: bottom left
+}
+#filament_logo {
+    padding: 0;
+    font-size: 1em;
+    width: 100%
+}
+#filament_logo a {
+    text-indent: -99999px;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%
+}
+h1#filament_logo {
+    margin: 2em 7% 0;
+    text-indent: -99999px;
+    overflow: hidden;
+    max-width: 15em;
+    background-size: 100%;
+    height: 3em
+}
+p#filament_logo {
+    margin: .8em 7% 0;
+    float: left;
+    width: 13em;
+    background-size: 100%;
+    height: 3em
+}
+a:link {
+    text-decoration: none
+}
+a:hover,
+a:focus {
+    text-decoration: underline
+}
+a:visited {
+    color: #1286D6
+}
+#home_nav {
+    margin: 1.5em 0 0
+}
+#home_nav ul,
+#primaryNavigation {
+    margin: 0;
+    padding: 0
+}
+#header {
+    border-bottom: 5px solid #fff;
+    border-bottom-color: rgba(255, 255, 255, .3)
+}
+#home #header {
+    border-bottom: 0
+}
+#home_nav li,
+#primaryNavigation li {
+    list-style: none;
+    font-weight: 300;
+    display: block
+}
+#home_nav li a,
+#primaryNavigation li a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: .5em 7%;
+    display: block;
+    background: rgba(0, 0, 0, .2);
+    margin-bottom: 1px;
+    font-weight: 600
+}
+#home_nav li a:hover,
+#primaryNavigation li a:hover {
+    background: rgba(0, 0, 0, .4)
+}
+#home_nav li:last-child a {
+    margin-bottom: 0
+}
+#navToggle {
+    margin: 0;
+    font-size: 1em;
+    text-decoration: none;
+    font-weight: 600;
+    color: #286b09;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18%;
+    max-width: 6em
+}
+#navToggle a {
+    display: block;
+    text-decoration: none;
+    color: #286b09;
+    background-position: 50%;
+    padding: 0;
+    text-indent: -9999px;
+    width: 100%;
+    height: 3.8em;
+    border-left: 1px solid rgba(255, 255, 255, .25)
+}
+#primaryNavigationWrap {
+    clear: both
+}
+.collapsible-heading-status {
+    position: absolute;
+    left: -99999px
+}
+.enhanced #primaryNavigationWrap,
+.collapsible-content-collapsed {
+    display: none
+}
+.enhanced #primaryNavigationWrap[aria-hidden=false] {
+    display: block
+}
+#content {
+    background: 0 0;
+    margin: 0;
+    padding: 3em 0;
+    color: #333;
+    border: 0;
+    clear: both
+}
+#whatwevedone #content,
+#whatwedo #content,
+#whatwerethinking #content,
+#whoweare #content,
+#contactus #content,
+#code #content {
+    padding: 2.5em 7%
+}
+body#home p.intro {
+    padding: 0;
+    margin: .3em 7% 25px;
+    color: #fff;
+    line-height: 1.4;
+    font-size: 1.3em;
+    max-width: 20em
+}
+.work-with-us {
+    display: block;
+    font-size: .9em;
+    font-weight: 300;
+    margin: 1.5em 0 0
+}
+#workwithus.netaward-variation .work-with-us {
+    margin-top: .5em
+}
+.work-with-us em {
+    margin-right: .6em;
+    font-style: normal;
+    margin-bottom: .4em;
+    display: block
+}
+.work-with-us a,
+.work-with-us a:link,
+.work-with-us a:visited {
+    border-radius: 3em;
+    border: 1px solid #eee;
+    border-color: rgba(255, 255, 255, .7);
+    padding: 0 .8em;
+    line-height: 2;
+    display: inline-block;
+    font-size: .9em;
+    color: #fff;
+    transition: background-color .2s
+}
+.work-with-us a:hover,
+.work-with-us a:focus {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: #fff;
+    text-decoration: none
+}
+#workwithus.netaward-variation {
+    overflow: hidden;
+    position: relative
+}
+#workwithus.netaward-variation .netaward {
+    padding-left: 80px;
+    color: #222;
+    max-width: 20em;
+    font-weight: 300
+}
+#workwithus.netaward-variation .netaward strong {
+    display: block;
+    color: #937c07;
+    margin-top: 1em;
+    font-weight: 600
+}
+#workwithus .netaward img {
+    width: 70px
+}
+#workwithus .work-with-us {
+    font-size: 1.1em;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 1.2em
+}
+#workwithus .work-with-us a,
+#workwithus .work-with-us a:link,
+#workwithus .work-with-us a:visited {
+    border-color: transparent;
+    background: #1286D6
+}
+#workwithus .work-with-us a:hover,
+#workwithus .work-with-us a:focus {
+    background: #fff;
+    border-color: #1286D6;
+    color: #1286D6
+}
+@media (min-width: 25em) {
+    .work-with-us em {
+        display: inline-block
+    }
+}
+@media (min-width: 50em) {
+    .work-with-us {
+        font-size: .85em
+    }
+    #workwithus .work-with-us {
+        font-size: 1.3em
+    }
+}
+.netaward {
+    display: block;
+    max-width: 32em;
+    overflow: hidden;
+    margin: 0;
+    color: #937c07;
+    padding-left: 26%;
+    position: relative;
+    min-height: 6em;
+    box-sizing: border-box
+}
+a.netaward:hover,
+a.netaward:focus {
+    text-decoration: none
+}
+.netaward img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25%;
+    max-width: 105px
+}
+a.netaward:hover h3,
+a.netaward:focus h3 {
+    text-decoration: underline
+}
+.netaward h3 {
+    font-size: 1.2em;
+    margin: 0;
+    color: #937c07;
+    font-weight: 600;
+    line-height: 1.2
+}
+.netaward p {
+    color: #333;
+    font-size: 1em;
+    font-weight: 300;
+    margin: .3em 0;
+    line-height: 1.4
+}
+.netaward p em {
+    font-style: normal;
+    color: #007be0;
+    font-weight: 600
+}
+a.netaward:hover p,
+a..netaward:focus p {
+    text-decoration: none
+}
+#net {
+    margin: 2em 0 3em
+}
+#content h1 {
+    font-size: 2em;
+    line-height: 1.2;
+    margin: 0 0 .1em;
+    font-weight: 300;
+    color: #368512;
+    width: auto;
+    display: inline-block;
+    padding-top: .4em
+}
+#content #overview p {
+    color: #404041;
+    font-size: 1.3em
+}
+#home #content {
+    padding: 2em 7% 0;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden
+}
+#upcoming {
+    padding: 0
+}
+#upcoming h3 {
+    font-size: 1.4em;
+    margin: 0 0 .3em;
+    color: #333;
+    font-weight: 300
+}
+#upcoming ul {
+    padding: 0;
+    list-style: none
+}
+#upcoming li {
+    margin-bottom: 1.6em;
+    max-width: 26em
+}
+#upcoming li a {
+    text-decoration: none
+}
+#upcoming li a:hover {
+    text-decoration: underline
+}
+#upcoming li .event {
+    color: #222;
+    font-size: .8em;
+    display: inline-block;
+    margin: 0;
+    background: #f8f8f8;
+    border-radius: 4px;
+    padding: .1em .4em;
+    border: 1px solid #eee
+}
+#upcoming li .date {
+    text-transform: uppercase;
+    color: #444;
+    font-weight: 600;
+    margin: 0 .2em 0 0;
+    display: inline-block;
+    font-size: .9em
+}
+#upcoming li h4 {
+    font-size: 1.1em;
+    margin: .3em 0 0
+}
+#upcoming h4 .who {
+    font-style: normal;
+    font-weight: 300;
+    color: #444;
+    font-size: .9em;
+    white-space: nowrap
+}
+#primaryContent p,
+#secondaryContent p,
+#primaryContent li,
+#secondaryContent li {
+    font-size: 1.1em;
+    line-height: 1.3
+}
+#primaryContent p img {
+    margin-top: .5em
+}
+#primaryContent p.caption {
+    line-height: 1.1;
+    font-style: italic;
+    margin: 0 1em 1em
+}
+h2 {
+    font-size: 1.2em;
+    margin: 2em 0 0
+}
+h3 {
+    font-size: 1.55em;
+    font-weight: 300
+}
+h4 {
+    font-size: 1.5em
+}
+h5 {
+    font-size: 1.4em
+}
+table {
+    width: 100%;
+    border: 1px solid #eee;
+    border-collapse: collapse
+}
+table td,
+table th {
+    border: 1px solid #ccc;
+    padding: .5em;
+    font-size: 1.2em
+}
+table th {
+    font-weight: 600
+}
+table thead th {
+    font-size: 1.1em
+}
+img,
+video {
+    max-width: 100%
+}
+pre {
+    font-size: .9em;
+    background: #FAFAFA;
+    padding: 1.5em;
+    color: #111;
+    line-height: 1.4;
+    border: 1px dotted #AAA;
+    margin: 0 0 2em;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word
+}
+code {
+    font-size: .8em;
+    color: #444
+}
+a code {
+    color: inherit
+}
+pre code {
+    font-size: 1em;
+    color: #111
+}
+pre,
+pre code,
+code {
+    font-family: Consolas, "Lucida Console", monospace
+}
+blockquote {
+    border-left: 3px solid #368512;
+    padding-left: 1em;
+    margin: 1.5em 2em
+}
+#primaryContent blockquote p,
+#secondaryContent blockquote p {
+    font-style: italic;
+    font-size: 1.5em
+}
+blockquote address {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5em
+}
+blockquote cite {
+    font-size: 1.4em;
+    font-style: normal
+}
+.rss {
+    font-size: .8em;
+    border-radius: 1.4em;
+    padding: .6em 1.2em .5em;
+    border: 1px solid #ddd;
+    margin: 1.2em 0;
+    display: inline-block;
+    background-color: #fff
+}
+.project-blurb {
+    position: relative;
+    clear: both;
+    margin-bottom: 1em;
+    margin-top: 2em
+}
+.project-blurb:after {
+    content: "\20";
+    display: block;
+    clear: both
+}
+.project-blurb:last-child {
+    margin-bottom: 4em
+}
+.project-blurb:before {
+    content: "\20";
+    display: block;
+    bottom: 0;
+    width: 70%;
+    border: 1px dashed #ddd;
+    margin: 0 auto 2em;
+    clear: both
+}
+.project-blurb:first-child {
+    margin-top: 0
+}
+.project-blurb img {
+    display: block;
+    margin: 1em 0 0;
+    max-height: 20em
+}
+.project-blurb h2 {
+    font-size: 1.6em;
+    font-weight: 300;
+    margin: .8em 0 .1em
+}
+#content .project-blurb p {
+    font-size: 1.1em
+}
+#content .project-blurb p.meta {
+    font-size: 1em;
+    font-weight: 300;
+    margin: .4em 0;
+    padding-bottom: .8em;
+    text-transform: uppercase
+}
+#content .project-blurb p.meta span {
+    font-weight: 600;
+    color: #555;
+    padding-right: .5em;
+    margin-right: .5em;
+    border-right: 1px solid #ddd
+}
+#content .project-blurb p.project-link em {
+    font-size: .9em
+}
+#content .project-blurb p.project-link:before {
+    content: "\20";
+    width: .6em;
+    height: .6em;
+    display: inline-block;
+    margin: 0 .5em 0 0;
+    position: relative;
+    background: #1286D6
+}
+#code #content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+#code #content li {
+    margin: 1em 0 1.5em
+}
+#code li h3 {
+    font-size: 1em;
+    text-decoration: none;
+    margin: 0
+}
+#code li h3 span {
+    color: #222;
+    font-size: .6em;
+    display: inline-block;
+    margin: 0 0 0 .5em;
+    background: #f8f8f8;
+    border-radius: 4px;
+    padding: .1em .8em;
+    border: 1px solid #eee;
+    position: relative;
+    top: -.2em
+}
+#code #content li p {
+    font-size: .9em;
+    margin: .3em 0 0
+}
+#code #content li li {
+    font-size: .75em;
+    display: inline-block;
+    border-right: 1px solid #ddd;
+    padding-right: .7em;
+    margin: .3em .5em 0 0
+}
+#code #content li li:last-child {
+    border: 0
+}
+#code li li a {
+    font-weight: 300
+}
+#services {
+    margin: 1em 0;
+    padding: 0
+}
+#services li {
+    font-size: 1em;
+    list-style: none;
+    margin: 0;
+    padding: 0 0 1em
+}
+#services li h2 {
+    margin: 0
+}
+#services li p {
+    margin: .3em 0 1em;
+    font-size: 1.4em
+}
+.sb_section {
+    overflow: hidden;
+    margin: 1em 0
+}
+.sb_thumbnail {
+    float: left;
+    margin-right: 10px
+}
+#content #overview p.note,
+#content p.note {
+    font-size: 1.2em;
+    background: #fefbe2
+}
+#content #overview p.outdated,
+#content p.outdated {
+    font-size: 1.3em;
+    background: #BC0909;
+    color: #fff
+}
+#content #overview p.outdated a,
+#content p.outdated a {
+    color: #fff
+}
+h2 .required {
+    font-size: .7em;
+    font-style: italic
+}
+label,
+input[type=text],
+textarea {
+    font-size: 1.3em;
+    padding: .3em 5px
+}
+input[type=text],
+textarea {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px
+}
+label {
+    font-weight: 600;
+    margin: .8em 0 .3em;
+    display: block
+}
+label[for=notify_me] {
+    display: inline
+}
+.commentForm button {
+    display: block;
+    clear: both;
+    margin: 1em 0;
+    float: none
+}
+textarea {
+    display: block;
+    padding: 10px
+}
+.entry h2,
+.entry h3 {
+    margin-top: 1.9em;
+    margin-bottom: .2em
+}
+.entry h2 {
+    font-size: 1.3em
+}
+.entry h3 {
+    color: #555;
+    font-size: 1em;
+    font-weight: 700;
+    text-transform: uppercase
+}
+#whatwedo .landing h3 {
+    text-transform: uppercase
+}
+#content div.commentEntry p.posted {
+    font-weight: 600;
+    font-style: italic;
+    color: #a8a87f;
+    font-size: 1.2em;
+    text-indent: 20px;
+    padding-top: .5em;
+    margin-top: 0;
+    border-top: 5px solid #e0e0cf;
+    position: relative
+}
+#content div.fg p.posted {
+    border-top-color: #a0cf87;
+    color: #666
+}
+p.posted span.arrow {
+    border-left: 0;
+    border-left: 8px dashed transparent;
+    border-top: 8px solid #e0e0cf;
+    top: 0;
+    left: 8px;
+    position: absolute
+}
+#content div.fg p.posted span.arrow {
+    border-top-color: #a0cf87
+}
+#twitterUpdate p.posted {
+    margin-top: 10px
+}
+#content span.fgCommenter {
+    color: #4f9c29
+}
+#content #comments div.commentEntry {
+    padding: .5em 0 1em
+}
+#content #comments div.commentBody {
+    padding: .5em 10px;
+    border: 1px solid #e0e0cf
+}
+#content #comments div.fg div.commentBody {
+    padding: .5em 10px;
+    border: 1px solid #d0e0cf
+}
+input.text,
+textarea {
+    width: 90%;
+    padding: .4em 8px;
+    font-size: 1.2em
+}
+textarea {
+    padding: 1em;
+    border-color: #aaa;
+    background: #eee;
+    font-size: 1.4em
+}
+#content #comments div.commentBody {
+    border-width: 0 0 3px;
+    padding: 0
+}
+#content #comments .posted {
+    padding: 1em 0
+}
+button {
+    background-color: #3a8912;
+    border: 2px solid #2a7802;
+    padding: .5em 1em;
+    margin: 0 0 0 .1em;
+    cursor: pointer;
+    float: right;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #eee;
+    -moz-border-radius: .5em;
+    -webkit-border-radius: .5em;
+    border-radius: .5em
+}
+#footerContain li a,
+#articleNav li a {
+    padding: .8em 0
+}
+#articles {
+    clear: both;
+    padding: 1.5em 0;
+    margin: 2em 0
+}
+#articles .post {
+    padding: 20px 0 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #aaa
+}
+#articles .post:last-child {
+    border: 0
+}
+#content #articles .post h3,
+#content #articles .post h4,
+#content #articles .post p {
+    padding: 0 10px;
+    margin: 0;
+    line-height: 1.5
+}
+#content #articles .post h3 {
+    font-size: 1.3em;
+    line-height: 1.2em;
+    padding-left: 2em;
+    font-weight: 300
+}
+#content #articles .post h3 a {
+    text-decoration: none;
+    font-weight: 300
+}
+#content #articles .post h3 a:hover {
+    text-decoration: underline
+}
+#content #articles .post h4 {
+    font-size: .9em;
+    text-transform: uppercase;
+    color: #222;
+    font-weight: 600;
+    margin: .25em 2em 0 0;
+    float: left;
+    min-width: 7em
+}
+#articles .post p {
+    font-size: 1.3em;
+    padding: 0;
+    margin: .5em 0
+}
+#articles .post p a:link,
+#articles .post p a:visited {
+    color: #999
+}
+#articles .post p span {
+    font-size: 1.5em;
+    font-weight: 600
+}
+#content #articleNav li {
+    font-size: 1.3em
+}
+#content #labSubscribe {
+    padding: 1.5em 0 2em
+}
+#content #labSubscribe li {
+    list-style-type: none;
+    line-height: 1;
+    margin: 0;
+    padding: 0
+}
+#content #labSubscribe p,
+#content #labSubscribe li {
+    float: left;
+    font-size: 1.2em
+}
+#content #labSubscribe p {
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 0 5px 0 0;
+    margin: 0
+}
+#content #articleNav #labSubscribe li a {
+    padding: 0;
+    line-height: 1;
+    border: 0
+}
+#articles .post {
+    border-color: #ddd
+}
+#content #articles .post h3,
+#content #articles .post h4,
+#content #articles .post p {
+    padding-left: 0;
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+    line-height: 1.5
+}
+#content #articles .post h4 {
+    position: absolute
+}
+#content #articles .post h3 {
+    margin-left: 4.5em;
+    font-size: 1.3em;
+    line-height: 1.3
+}
+#primaryContent .example_right p,
+#primaryContent .example_left p {
+    font-size: 1.3em;
+    line-height: 1.2;
+    color: #666
+}
+#whatwerethinking #primaryContent li {
+    margin-bottom: .5em
+}
+#whatwevedone .carousel {
+    padding: 0 0 3em
+}
+#whatwevedone .carousel-item {
+    background: #fff
+}
+#footerContain {
+    border: 1px solid #ddd;
+    padding: 0 7%;
+    margin: 15px 0;
+    background: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px
+}
+#footerContain ul,
+#footerContain li,
+#articleNav ul,
+#articleNav li {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+#footerContain li,
+#articleNav li {
+    padding: 0;
+    margin: 0;
+    border-bottom: 1px dotted #ddd;
+    font-size: 1em
+}
+#footerContain li:last-child,
+#articleNav li:last-child {
+    margin: 0;
+    border: 0
+}
+#footerContain li a,
+#articleNav li a {
+    font-size: 1.1em;
+    display: block;
+    padding: .6em 0
+}
+#content #footerInterior h4 {
+    clear: both;
+    overflow: hidden;
+    font-size: 1.1em;
+    margin: 0
+}
+#content #footerInterior h4 a,
+#content #footerInterior h4 .footer-section-preview {
+    color: #4E9A29;
+    float: left;
+    overflow: hidden
+}
+#content #footerInterior h4 .footer-section-preview a {
+    float: left;
+    font-size: .9em;
+    font-weight: 400;
+    background-color: #eee;
+    background-position: 50% 50%;
+    color: #666;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #aaa;
+    margin-left: .3em;
+    text-indent: -99999px;
+    border: 1px solid #666
+}
+#footerBook {
+    margin: 2em 0 0;
+    line-height: 1.4
+}
+#home #footerBook {
+    box-sizing: border-box
+}
+#home #footerBook ul {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+#footerBook h3 {
+    display: block;
+    font-size: 1.4em;
+    margin: 0 0 1em;
+    color: #333;
+    font-weight: 300
+}
+#footerBook li {
+    font-weight: 300;
+    font-style: normal;
+    border: 0;
+    line-height: 1.3;
+    clear: both;
+    box-sizing: border-box;
+    max-width: 30em
+}
+#footerBook li a {
+    display: block;
+    color: #222;
+    padding: 1em 0;
+    margin-left: -.5em
+}
+#footerBook li a:hover {
+    color: #4e922b
+}
+#footerBook li a:after {
+    content: "\20";
+    clear: both;
+    display: block
+}
+#footerBook img {
+    margin-right: 1em;
+    max-width: 40%;
+    float: left;
+    margin: -1em 1em 1em .5em
+}
+#footerBook li a:hover img {
+    outline: 1px solid #ccc
+}
+#footerBook img {
+    outline: 1px solid #eee
+}
+#footerBook li em {
+    font-weight: 600;
+    font-style: normal;
+    display: block;
+    font-size: 1em;
+    margin: 0 0 .2em;
+    border-top: 2px solid #eee;
+    padding-top: 1em;
+    line-height: 1.2
+}
+#footerBook li p {
+    font-style: normal;
+    margin: .5em 0 .6em;
+    font-size: .9em;
+    font-weight: 300;
+    color: #444
+}
+#content #footerInterior h4 .footer-section-preview a {
+    background-position: 50% 55%;
+    width: 1.4em;
+    height: 1.4em;
+    border: 0;
+    padding: 0;
+    background-color: #aaa;
+    border-radius: 100%;
+    position: relative;
+    top: .1em
+}
+#content #footerInterior h4,
+#content #footerInterior h4 a,
+#content #footerInterior h4 .footer-section-preview {
+    padding: .2em .3em .3em 0
+}
+#footerContain {
+    border-width: 1px 0 0;
+    padding: 0;
+    margin: 2em 0 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0
+}
+#copyright {
+    font-size: 1em;
+    margin: 0;
+    background: #f0f0f0;
+    padding: 1em 7%;
+    position: relative;
+    line-height: 1.4;
+    clear: both
+}
+#copyright .company {
+    font-weight: 600;
+    margin: 0;
+    color:
+}
+#copyright .company a {
+    color: #555
+}
+#copyright dl dt,
+#copyright dl dd {
+    display: inline-block;
+    margin: 0;
+    padding: 0
+}
+#copyright dl {
+    font-size: .9em
+}
+#copyright dl dt {
+    font-weight: 600;
+    color: #666;
+    min-width: 3.2em
+}
+#copyright .adr {
+    margin-bottom: .8em
+}
+#copyright dl,
+#copyright .adr {
+    display: block;
+    margin: 0 0 .4em
+}
+#copyright .copyright {
+    margin-bottom: 0;
+    font-size: .9em
+}
+#whoweare #primaryContent h2 a {
+    padding-left: 1.5em;
+    font-weight: 600;
+    background-position: left center;
+    font-size: .8em;
+    margin-left: .8em
+}
+#content div.commentEntry p:after,
+.dwpe-ad:after,
+.clearfix:after,
+.figure-group:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+#content div.commentEntry p,
+.dwpe-ad,
+.clearfix,
+.figure-group {
+    zoom: 1
+}
+.figure-group {
+    padding: 1em 0
+}
+@media (min-width: 30em) {
+    #navToggle {
+        top: .5em;
+        width: auto;
+        right: 3em
+    }
+    #navToggle a {
+        width: 5.5em;
+        height: 2.4em;
+        border: 1px solid rgba(255, 255, 255, .4);
+        text-indent: .8em;
+        background-position: 4em center;
+        color: #fff;
+        font-weight: 300;
+        border-radius: 7px;
+        font-size: 1.1em;
+        line-height: 2.1
+    }
+}
+@media (min-width: 30em) and (max-width: 65em) {
+    #home #footerBook li em {
+        font-size: 1.2em;
+        line-height: 1.3;
+        padding-top: 1.6em
+    }
+    #home #footerBook li p {
+        font-size: 1.1em
+    }
+}
+@media (min-width: 35em) {
+    #home_nav ul {
+        margin: 0;
+        background: #fff;
+        display: table;
+        width: 100%;
+        background: 0 0;
+        padding: 0;
+        background: 0 0;
+        padding: 0 3em;
+        box-sizing: border-box
+    }
+    #home_nav {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 7%;
+        background: rgba(0, 0, 0, .2)
+    }
+    #home_nav ul {
+        position: static;
+        max-width: 60em;
+        margin: 0 auto;
+        padding: 0
+    }
+    #home_nav li {
+        display: table-cell;
+        float: none;
+        width: 20%;
+        border: 0;
+        border-radius: 0!important
+    }
+    #home_nav li a {
+        whitespace: nowrap;
+        padding: .5em 0;
+        display: block;
+        text-align: center;
+        background: 0 0
+    }
+    #home_nav li a,
+    #primaryNavigation li a {
+        font-weight: 300
+    }
+    #home_nav li.whatwedo a {
+        text-align: left
+    }
+    .work-with-us {
+        font-weight: 600
+    }
+    .netaward {
+        padding-left: 110px
+    }
+}
+@media (min-width: 48em) {
+    #home #content {
+        padding: 2em 7% 0;
+        max-width: 60em;
+        margin: 0 auto
+    }
+    .project-blurb h2 {
+        font-size: 2.5em;
+        width: 100%
+    }
+    #content .project-blurb p.meta {
+        font-size: 1em;
+        margin-bottom: 1.5em;
+        margin-top: .4em
+    }
+    #content .project-blurb p.meta:after {
+        display: block;
+        position: absolute;
+        border-bottom: 2px solid #FFDD15;
+        width: 100%;
+        margin: .5em 0
+    }
+    #content {
+        padding: 2em 3em
+    }
+    #primaryContent #overview {
+        padding-right: 0
+    }
+    #content #overview p {
+        font-size: 1.7em;
+        line-height: 1.4;
+        margin: .5em 0 .7em;
+        max-width: 30em
+    }
+    #content #overview p.postData {
+        font-size: 1.5em;
+        margin: .8em 0
+    }
+    #content h1 {
+        font-size: 3em;
+        margin: .5em 0 .1em;
+        letter-spacing: -.01em
+    }
+    #primaryContent p,
+    #secondaryContent p,
+    #primaryContent li,
+    #secondaryContent li {
+        font-size: 1.3em;
+        margin: .5em 0;
+        line-height: 1.45
+    }
+    #primaryContent li p,
+    #secondaryContent li p {
+        font-size: 1em
+    }
+    #articles {
+        font-size: 1.1em
+    }
+    #primaryNavigation li a {
+        white-space: nowrap
+    }
+    #copyright {
+        border-bottom: 0;
+        padding: 2em 0;
+        border-top-color: #ddd;
+        background: 0 0;
+        clear: both;
+        margin: 0 3em;
+        border-top: 1px solid #ddd
+    }
+    #copyright .company,
+    #copyright .adr {
+        float: left;
+        margin: 0 1em 0 0;
+        font-size: 1em;
+        padding: 0
+    }
+    #copyright .adr {
+        position: relative;
+        top: -.15em
+    }
+    #copyright dl {
+        float: left;
+        margin-right: 1em;
+        margin-top: .5em;
+        font-size: .95em
+    }
+    #copyright dl.tel {
+        clear: left
+    }
+    #copyright dl dt {
+        min-width: inherit
+    }
+    #copyright .copyright {
+        clear: left;
+        padding: .5em 0
+    }
+    #home #upcoming {
+        width: 12em;
+        float: left
+    }
+    #home #footerBook li em {
+        padding-top: 1em
+    }
+    #home #footerBook {
+        margin: 0;
+        float: left;
+        width: 45%;
+        margin-left: 3em
+    }
+    .project-blurb h2,
+    .project-blurb p {
+        width: 60%
+    }
+    #content .project-blurb:before {
+        clear: both;
+        border: 0;
+        padding-bottom: 2em
+    }
+    .project-a img {
+        top: 0;
+        margin-bottom: 0;
+        margin-top: 1em
+    }
+    .project-a h2 {
+        width: 100%
+    }
+    .project-a p {
+        width: 100%
+    }
+    #content .project-a p.meta {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        float: none
+    }
+    .project-b:after {
+        margin-top: 6em;
+        margin-bottom: 0
+    }
+    .project-b img {
+        position: absolute;
+        right: 0;
+        top: 5em;
+        max-height: 90%;
+        margin: 0;
+        max-width: 35%
+    }
+    .project-b p.meta {
+        border-bottom: 1px solid #ddd
+    }
+    .project-c:after {
+        margin-top: 0;
+        clear: both;
+        display: block
+    }
+    .project-c img {
+        position: absolute;
+        left: 0;
+        top: 7em;
+        max-height: 90%;
+        margin: 0;
+        max-width: 35%
+    }
+    #content .project-c h2 {
+        float: right
+    }
+    .project-c p {
+        float: right;
+        margin-left: 0
+    }
+    .project-c p.project-link {
+        float: right;
+        clear: right;
+        width: 60%
+    }
+    .project-c p.meta {
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+        width: 60%
+    }
+    #code #content li h3 {
+        font-size: .9em
+    }
+    #code #content li p {
+        font-size: .8em
+    }
+    #home #footerBook {
+        margin-left: 7em;
+        width: 50%;
+        margin-top: -1px;
+        padding-bottom: 3em;
+        box-sizing: border-box
+    }
+    #net {
+        width: 50%;
+        float: left;
+        margin-left: 7em;
+        margin-top: 0;
+        margin-bottom: 3em
+    }
+    .figure-group.fig-a img {
+        float: left;
+        margin-right: -300px
+    }
+    .figure-group.fig-a .caption {
+        float: right;
+        padding-left: 300px
+    }
+    #upcoming {
+        width: 18em;
+        float: left
+    }
+    .code-group {
+        box-sizing: border-box;
+        padding-right: 5%;
+        width: 45%;
+        float: left
+    }
+    .code-group:nth-child(even) {
+        float: right;
+        width: 50%
+    }
+    .project-blurb {
+        margin-right: -28%
+    }
+    .project-a p.project-link {
+        float: right;
+        width: 60%
+    }
+    .project-a p {
+        width: 60%;
+        margin-top: 0;
+        clear: right;
+        float: right
+    }
+    .project-b.project-img-kick img {
+        width: 45%;
+        margin-right: -12%
+    }
+    #code #primaryContent {
+        overflow: hidden
+    }
+    .postTitle,
+    #primaryContent,
+    #secondaryContent {
+        padding-right: 28%
+    }
+    #code #primaryContent {
+        padding-right: 0
+    }
+    h2,
+    .entry h2 {
+        font-size: 1.5em;
+        font-weight: 600
+    }
+    h3,
+    .entry h3 {
+        font-size: 1.3em;
+        font-weight: 300
+    }
+    #whatwerethinking #content h1 {
+        width: 100%;
+        max-width: none
+    }
+    #whatwerethinking #content #primaryContent h1 {
+        width: 120%
+    }
+    #whoweare #primaryContent h2 {
+        float: left;
+        width: 23%;
+        clear: both;
+        text-align: right;
+        font-size: 1.5em;
+        margin: 1.8em 0 0
+    }
+    #whoweare #primaryContent h2 span {
+        display: block
+    }
+    #whoweare #primaryContent h2 a {
+        display: block;
+        margin: .8em 0;
+        float: right;
+        width: auto;
+        font-size: .65em
+    }
+    #whoweare #primaryContent {
+        overflow: hidden;
+        padding-bottom: 4em;
+        padding-right: 14%
+    }
+    #whoweare #primaryContent p {
+        margin: 2.2em 0;
+        float: right;
+        width: 72%;
+        font-size: 1.2em
+    }
+    #footerInterior #footerBook {
+        clear: both
+    }
+    #overview {
+        padding-right: 10%
+    }
+    #primaryContent .example_left {
+        margin-left: -10em
+    }
+    #primaryContent .example_right {
+        margin-right: -10em
+    }
+    #content {
+        max-width: 60em;
+        margin: 0 auto
+    }
+    .figure-a {
+        float: left;
+        margin-right: 2em;
+        margin-bottom: 2em
+    }
+    .figure-b {
+        float: right;
+        margin-left: 2em;
+        margin-bottom: 2em;
+        margin-right: -28%
+    }
+}
+@media (min-width: 50em) {
+    #home #contain {
+        padding-top: 6em
+    }
+    #home #header {
+        padding: 0;
+        position: static
+    }
+    #headerInner {
+        position: relative;
+        max-width: 60em;
+        margin: 0 auto;
+        padding: 0 7%
+    }
+    #home #headerInner {
+        position: static;
+        height: auto!important
+    }
+    h1#filament_logo {
+        margin: 4.7em 0 1em 7%;
+        width: 12.5em;
+        float: left;
+        max-width: none
+    }
+    p#filament_logo {
+        margin: 1em 0 .5em;
+        max-width: 15em
+    }
+    body#home p.intro {
+        margin: 2.5em 0 3em 2em;
+        font-size: 1.2em;
+        line-height: 1.5;
+        float: left;
+        width: 45%;
+        clear: none;
+        max-width: none
+    }
+    #primaryNavigation {
+        margin: .4em 0 .2em;
+        padding: 0
+    }
+    #primaryNavigation li a {
+        margin-right: 1px
+    }
+    #home_nav li a,
+    #primaryNavigation li a {
+        opacity: .7;
+        padding-left: 1em;
+        padding-right: 1em
+    }
+    #home_nav li a {
+        opacity: .8
+    }
+    #whatwedo li.whatwedo a,
+    #whatwevedone li.whatwevedone a,
+    #whatwerethinking li.whatwerethinking a,
+    #whoweare li.whoweare a,
+    #code li.code a {
+        opacity: 1
+    }
+    #home_nav li a:hover,
+    #primaryNavigation li a:hover {
+        background: 0 0;
+        opacity: 1;
+        text-decoration: none
+    }
+    #home_nav ul {
+        margin: 0;
+        background: #fff;
+        display: table;
+        width: 100%;
+        background: 0 0;
+        padding: 0;
+        background: 0 0;
+        padding: 0 3em;
+        box-sizing: border-box
+    }
+    #home_nav {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0 7%;
+        background: 0 0
+    }
+    #home_nav ul {
+        position: static;
+        max-width: 60em;
+        margin: 0 auto;
+        padding: 0
+    }
+    #home_nav li {
+        display: table-cell;
+        float: none;
+        width: 20%;
+        border: 0;
+        border-radius: 0!important;
+        background: 0 0
+    }
+    #home_nav li a {
+        whitespace: nowrap;
+        padding: .5em 0;
+        font-weight: 300;
+        font-size: 1.3em;
+        display: block;
+        color: #555;
+        background: 0 0;
+        text-align: center
+    }
+    #home_nav li.whatwedo a,
+    #home_nav li.whatwerethinking a {
+        margin-right: 0
+    }
+    #home_nav li.whatwedo a {
+        text-align: left
+    }
+    #home_nav li.code a {}#primaryNavigation {
+        margin-left: 0;
+        margin-right: 0
+    }
+    #home_nav ul,
+    #primaryNavigation {
+        width: 100%;
+        display: table
+    }
+    #primaryNavigation li {
+        display: table-cell
+    }
+    #primaryNavigation li a {
+        background: 0 0;
+        padding: .5em 0
+    }
+    #home_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%
+    }
+    h1#filament_logo {
+        margin: 5.6em 0 1em;
+        width: 15em
+    }
+    .logo-intro {
+        margin: 0 auto;
+        max-width: 60em
+    }
+    body#home p.intro {
+        margin: 2em 0 2em 9%;
+        font-size: 1.2em;
+        width: 54%
+    }
+    #home #primaryNavigation {
+        width: 100%
+    }
+    #navToggle {
+        display: none
+    }
+    #primaryNavigationWrap,
+    .enhanced #primaryNavigationWrap {
+        display: block;
+        float: right;
+        width: 67%;
+        clear: none;
+        margin: 0
+    }
+    #primaryNavigation li a {
+        background: 0 0;
+        padding: .8em;
+        font-size: 1.2em
+    }
+    #home_nav li a {
+        font-size: 1.4em;
+        white-space: nowrap
+    }
+    .rss {
+        position: absolute;
+        right: 0;
+        top: 1em
+    }
+}
+@media (min-width: 56em) {
+    #home #footerBook {
+        margin-left: 7em
+    }
+    #footerInterior #footerBook img {
+        height: 10em
+    }
+    #footerInterior #footerBook {
+        padding-bottom: 1.5em
+    }
+    #footerInterior #footerBook li {
+        float: left;
+        width: 47.5%;
+        padding-bottom: 0;
+        clear: none;
+        margin-right: 5%
+    }
+    #footerInterior #footerBook li:last-child {
+        margin-right: 0
+    }
+    body#home p.intro {
+        margin: 2em 0 2em 2.7em;
+        width: 54%;
+        font-size: 1.4em
+    }
+}
+@media (min-width: 62em) {
+    #primaryNavigation li {
+        width: 1%;
+        float: none;
+        display: table-cell
+    }
+    #content h1 {
+        min-width: 60%
+    }
+    p#filament_logo {
+        margin-left: 0;
+        float: left;
+        width: 18em
+    }
+    body#home p.intro {
+        font-size: 1.6em
+    }
+    .work-with-us {
+        font-size: .7em
+    }
+    #primaryNavigationWrap {
+        width: 60%
+    }
+    #primaryNavigation li a {
+        font-size: 1.3em;
+        padding: .8em
+    }
+    #workwithus.netaward-variation {
+        position: relative
+    }
+    #workwithus.netaward-variation .work-with-us {
+        padding-left: 25em
+    }
+    #workwithus.netaward-variation .netaward {
+        position: absolute;
+        left: 0;
+        font-size: 1.2em
+    }
+    #workwithus.netaward-variation .netaward strong {
+        margin-top: .4em
+    }
+}
+@media (min-width: 70em) {
+    #whatwevedone #content,
+    #whatwedo #content,
+    #whatwerethinking #content,
+    #whoweare #content,
+    #contactus #content,
+    #code #content {
+        padding: 2em 0;
+        max-width: 60em;
+        margin: 0 auto
+    }
+    h1#filament_logo {
+        margin-top: 6.2em;
+        margin-left: 0;
+        width: 18em
+    }
+    body#home p.intro {
+        margin: 2em 0 2em 3em;
+        width: 55%;
+        font-size: 1.8em
+    }
+    #copyright {
+        max-width: 60em;
+        margin: 0 auto;
+        padding-left: 0
+    }
+    #home #content {
+        padding: 3em 0 0;
+        max-width: 60em;
+        margin: 0 auto;
+        overflow: hidden
+    }
+    #home #upcoming {
+        width: 18em
+    }
+    #home #footerBook {
+        margin-left: 5.5em;
+        width: 60%
+    }
+    #net {
+        width: 60%;
+        float: left;
+        margin-left: 5.5em
+    }
+    .netaward {
+        padding-left: 130px
+    }
+    .netaward h2 {
+        font-size: 1.3em
+    }
+    #home #footerBook li {
+        float: left;
+        width: 47.5%;
+        clear: none;
+        padding-bottom: 0;
+        margin-right: 5%
+    }
+    #home #footerBook li:last-child {
+        margin-right: 0
+    }
+    #home #footerBook li img {
+        max-height: 9em
+    }
+    #home #footerBook h3,
+    #home #upcoming h3 {
+        font-size: 1.5em;
+        margin-bottom: .5em
+    }
+}

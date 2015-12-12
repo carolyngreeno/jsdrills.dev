@@ -1,0 +1,81 @@
+.container--calc {
+
+	body {
+		font-family: Lato, "Helvetica Neue", Arial, sans-serif;
+		font-weight: 300;
+		color: #333;
+		line-height: 1rem;
+	}
+	*:focus {
+		outline: none;
+	}
+	.container--calc {
+		margin-top: 2rem;
+		margin-bottom: 3rem;
+		font-size: 2rem;
+	}
+	.container--calc .row {
+		margin-bottom: 3rem;
+	}
+	.container--calc p {
+		margin: 0;
+		padding: 0 0 0 5px;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	.container--calc label, .container--calc input, .container--calc .total {
+		height: 5rem;
+		line-height: 5rem;
+		margin-bottom: 0;
+	}
+	.container--calc label {
+		font-size: 2rem;
+	}
+	.container--calc input {
+		font-size: 2rem;
+		padding: 1px;
+		border: solid 1px orange;
+		text-align: center;
+		background-color: white;
+		cursor: auto;
+		overflow: hidden;
+	}
+	.container--calc span {
+		padding: 1px;
+	}
+	.brdr-btm {
+		border-bottom: solid 1px #ccc;
+	}
+	.total {
+		height: 7rem;
+		line-height: 7rem;
+		padding-right: 1rem;
+		text-align: right;
+	}
+	.total--final {
+		font-size: 3rem;
+		font-weight: 700;
+	}
+	.active {
+		border-bottom: solid 10px orange;
+		transition: all 1s;
+	}
+	.active-prices {
+		border-bottom-color: orange;
+		transition: all 1s;
+	}
+	small {
+		font-weight: 300;
+		margin-left: 1rem;
+	}
+	.text-center {text-align: center;}
+	.text-left {text-align: left;}
+	.text-right {text-align: right;}
+
+	@media (max-width: 550px) {
+		.total--final {
+			width: 50%;
+			text-align: right;
+		}
+	}
+}

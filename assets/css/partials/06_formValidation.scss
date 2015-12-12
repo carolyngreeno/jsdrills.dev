@@ -1,0 +1,16 @@
+.error-message {
+	height: 300px;
+	width: auto;
+	margin: 0 auto;
+	background: url('/assets/img/fix-it-bitch.jpg') no-repeat center center transparent;
+	background-size: contain;
+}
+
+.input-field-valid {
+	border-width: 5px !important;
+}
+
+.input-field-error-msg {
+	background-color: red !important;
+	@extend .u-cf;
+}

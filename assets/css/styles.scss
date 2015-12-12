@@ -1,0 +1,19 @@
+// Variables
+$slate: 	#31424c;
+$pink:		#ff5776;
+$gold:		#fcaf35;
+$blue:		#6ad0df;
+
+// Skeleton Boilerplate
+@import "scaffolding/normalize";
+@import "scaffolding/fonts";
+@import "scaffolding/skeleton";
+
+// Partials
+@import "partials/global";
+@import "partials/01_tabs";
+@import "partials/02_calculator";
+@import "partials/03_checklist";
+@import "partials/04_colorSwitcher";
+@import "partials/05_userData";
+@import "partials/06_formValidation";

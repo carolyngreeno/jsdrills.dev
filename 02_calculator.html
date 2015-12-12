@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<title>Calculator</title>
+	<link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+	<script src="assets/js/02_calculator.js"></script>
+</head>
+<body>
+	<main class="container">
+		<div class="container--calc">
+			<form>
+				<div class="row">
+					<label class="four columns" for="itemOne">Apples <small>(.60/each)</small></label>
+					<input class="three columns" id="itemOne" type="number" name="itemOne" step="1" value="0">
+					<span class="four offset-by-one columns total brdr-btm" id="itemOneSub"></span>
+				</div>
+				<div class="row">
+					<label class="four columns" for="itemTwo">Oranges  <small>(.25/each)</small></label>
+					<input class="three columns" id="itemTwo" type="number" name="itemTwo" step="1" value="0">
+					<span class="four offset-by-one columns total brdr-btm" id="itemTwoSub"></span>
+				</div>
+				<div class="row">
+					<span class="seven columns text-right total total--final total--text">Total $</span></span>
+					<span class="four offset-by-one columns total total--final brdr-btm" id="finalTotal"></span>
+				</div>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
+ 
+ 

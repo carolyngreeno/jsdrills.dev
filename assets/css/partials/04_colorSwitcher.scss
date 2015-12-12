@@ -1,0 +1,56 @@
+$color-slate:			#31424c;
+$color-pink:			#ff5776;
+$color-gold:			#fcaf35;
+$color-blue:			#6ad0df;
+$color-white:			#ffffff;
+
+// Color Switcher
+#switcher {
+	width: 100%;
+	text-align: center;
+	list-style: none;
+	margin: 0;
+	padding: 10% 0;
+	overflow: hidden;
+
+	li {
+		display: inline-block;
+		height: 150px;
+		width: 20%;
+		margin: 0 5%;
+		font-size: 100px;
+		line-height: 100px;
+		cursor: pointer;
+		border: solid 5px $color-white;
+
+		&:nth-child(2) {
+			margin: 0;
+		}
+	}
+}
+
+#pinkBtn {
+	background-color: $color-pink;
+}
+#goldBtn {
+	background-color: $color-gold;
+}
+#blueBtn {
+	background-color: $color-blue;
+}
+
+#colorBg.pink-bg {
+	background-color: $color-pink;
+}
+#colorBg.gold-bg {
+	background-color: $color-gold;
+}
+#colorBg.blue-bg {
+	background-color: $color-blue;
+}
+
+#colorBg {
+	width: 100%;
+	margin: 2.5rem 0 0;
+	background-color: $color-white;
+}

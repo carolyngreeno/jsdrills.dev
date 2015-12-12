@@ -1,0 +1,64 @@
+.ex-03_drill {
+
+	> form {
+		margin-bottom: 0;
+	}
+
+	.row {
+		margin: 5px;
+		padding: .5rem 9px;
+		text-align: center;
+		border-radius: 0;
+
+		&:nth-child(1) {
+			background: linen;
+		}
+		&:nth-child(2) {
+			background: blanchedalmond;
+		}
+		&:nth-child(3) {
+			background: cornsilk;
+		}
+
+		&.row--total {
+			padding: 5px;
+		}
+	}
+
+	input, input.text-input, button, button[type="submit"], .button, .button[type="submit"] {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.required {
+		border-color: red;
+	}
+
+	.submitted {
+		color: #ccc;
+	}
+
+	button, .button {
+		padding-right: 0;
+		padding-left: 0;
+		border: solid 2px rgba(255,255,255,1);
+		background: rgba(255,255,255,.6);
+	}
+
+	button[type="submit"], .button[type="submit"] {
+		border: solid 2px rgba(0,0,0,.07);
+		background: rgba(0,0,0,.03);
+
+		&:hover {
+			border: solid 2px rgba(0,0,0,.1);
+			background: rgba(0,0,0,.07);
+		}
+	}
+}
+
+@media (max-width: 550px) {
+	.ex-03_drill button, .ex-03_drill .button {
+	    margin-top: 0.2rem;
+	    margin-bottom: 0.2rem;
+	}
+}
