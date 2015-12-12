@@ -55,7 +55,7 @@ window.addEventListener("load", function() {
 
 		cnlBtnEvent.preventDefault();
 	}
-	
+
 
 	/* CONFIRM BUTTON */
 	var cnfmBtn = document.querySelectorAll(".confirm-delete-button");
@@ -66,23 +66,36 @@ window.addEventListener("load", function() {
 	function handleConfirmClick(cnfmBtnEvent) {
 		cnfmBtnEvent.target.style.visibility = "hidden";
 
+		// reference to parent of event object's target (div.delete-buttons)
 		var btnParent = cnfmBtnEvent.target.parentNode;
-		var btnChildren = btnParent.children;
+		var btnParentRow = btnParent.parentNode;
+		var parentItem = btnParentRow.parentNode;
+		parentItem.removeChild(btnParentRow);
 
-		for (var i = 0; i < btnChildren.length; i++) {
+		// var btnChildren = btnParent.children;
 
-			if (btnChildren[i].classList.contains("delete-button")) {
-				btnChildren[i].style.visibility = "hidden";
-			}
+		// for (var i = 0; i < btnChildren.length; i++) {
 
-			if (btnChildren[i].classList.contains("cancel-delete-button")) {
-				btnChildren[i].style.visibility = "hidden";
-			}
-		}
+		// 	if (btnChildren[i].classList.contains("delete-button")) {
+		// 		btnChildren[i].style.visibility = "hidden";
+		// 	}
 
-		btnParent.innerHTML = "This item has been deleted.";
+		// 	if (btnChildren[i].classList.contains("cancel-delete-button")) {
+		// 		btnChildren[i].style.visibility = "hidden";
+		// 	}
+		// }
+
+		// btnParent.innerHTML = "This item has been deleted.";
 		cnfmBtnEvent.preventDefault();
 	}
+
+
+	// HOMEWORK 12/11/15
+	// form submission w/ jquery
+		// work on inline error messages
+		// removing row like we just did
+	// specifically adding and removing elements
+	// and adding and removing the error messages
 
 
 	/* VALIDATE TEXT INPUTS ON BLUR */
