@@ -123,12 +123,11 @@ window.addEventListener("load", function() {
 			// get parent element of event target
 			var inputParent = onFOEvent.target.parentNode;
 
-			// ASK BRENDAN: WHY DOES THIS ONLY GET THE ONE CHILD?
 			// get child elements of the parent element referenced above
 			var inputChildren = inputParent.children;
 
 			// FOR TESTING: add class 'input-field-valid' to input field
-			onFOEvent.target.classList.add('input-field-valid');
+			// onFOEvent.target.classList.add('input-field-valid');
 
 			// create paragraph for insertion in parent element
 			var inputErr = document.createElement('p');
@@ -139,20 +138,24 @@ window.addEventListener("load", function() {
 			// append message to container div (parent)
 			inputParent.appendChild(inputErr);
 		}
-
-		// FOR TESTING: reference error message by looking for element with class 'input-field-valid'
-		var remInputErr = document.querySelector('.input-field-error-msg');
-		// if an element with the class 'input-field-valid' isn't found
-		if (remInputErr !== null) {
-			// remove error class from input field
-			remInputErr.classList.remove('input-field-valid-msg');
-		}
 	}
 
 	// create function remove class from field when use clicks back
 	function valRemoveErr(onFOEvent) {
+
 		// input-field-valid — remove 'input-field-valid' class
 		onFOEvent.target.classList.remove('input-field-valid');
+
+		// FOR TESTING: reference error message by looking for element with class 'input-field-valid'
+		var remInputErr = document.querySelector('.input-field-error-msg');
+
+		// if an element with the class 'input-field-valid' isn't found
+		if (remInputErr !== null) {
+			// remove error class from input field
+			var remInputParent = remInputErr.parentNode;
+			remInputErr.classList.remove('input-field-valid-msg');
+			remInputParent.removeChild(remInputErr);
+		}
 	}
 
 	// if user clicks away from field and it's blank but there's already an error message
@@ -167,9 +170,12 @@ window.addEventListener("load", function() {
 
 		var inputValid = true;
 
-		var remErr = document.querySelector('.error-message');
+		var formObj = document.getElementById('checklist');
+
+		var remErr = formObj.querySelector('.error-message');
+
 		if (remErr !== null) {
-			document.removeElement('p');
+			formObj.removeChild(remErr);
 		}
 
 		for (var i = 0; i < allTextInputs.length; i++) {
@@ -189,7 +195,6 @@ window.addEventListener("load", function() {
 			errorMsg.classList.add('error-message');
 			// errorMsg.innerHTML = 'fix it';
 			
-			var formObj = document.getElementById('checklist');
 			formObj.appendChild(errorMsg);
 
 		}

@@ -112,14 +112,16 @@ window.addEventListener("load", function() {
 
 		var inputValid = true;
 
+		var formObj = document.getElementById('checklist');
+
 		// if there's an error message in the form, remove it
-		var remErr = document.querySelector('.error-message');
+		var remErr = formObj.querySelector('.error-message');
 
 		// if remErr is null then there's nothing to do
 		// if it's not null then we need to remove the error message from form
 		if (remErr !== null) {
 			// method that removes elements is removeChild
-			document.removeElement('p');
+			formObj.removeChild(remErr);
 		}
 
 		for (var i = 0; i < allTextInputs.length; i++) {
@@ -147,10 +149,7 @@ window.addEventListener("load", function() {
 			errorMsg.classList.add('error-message');
 			// errorMsg.innerHTML = 'fix it';
 			
-			var formObj = document.getElementById('checklist');
-
 			formObj.appendChild(errorMsg);
-
 		}
 
 	}
