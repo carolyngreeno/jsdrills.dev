@@ -471,6 +471,17 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 0
 		},
+	"\/assets\/js\/06c_formValidation.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/assets\/js\/06c_formValidation.js",
+		"outputAbbreviatedPath": "\/assets\/js\/06c_formValidation-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
 	"\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,

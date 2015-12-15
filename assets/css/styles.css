@@ -840,7 +840,7 @@ hr {
 .container:after,
 .row:after,
 .u-cf,
-.input-field-error-msg {
+.ex-06_drill .input-field-error-msg {
   content: "";
   display: table;
   clear: both; }
@@ -1114,15 +1114,19 @@ there.
       text-decoration: underline;
       color: #fcaf35; }
 
-.error-message {
+.ex-06_drill .text-input {
+  margin-bottom: .5em !important; }
+.ex-06_drill a.button {
+  margin-bottom: .5em !important; }
+.ex-06_drill .error-message {
   height: 300px;
   width: auto;
   margin: 0 auto;
   background: url("/assets/img/fix-it-bitch.jpg") no-repeat center center transparent;
   background-size: contain; }
-
-.input-field-valid {
+.ex-06_drill .input-field-valid {
   border-width: 5px !important; }
-
-.input-field-error-msg {
-  background-color: red !important; }
+.ex-06_drill .input-field-error-msg {
+  color: red;
+  font-size: .8125em;
+  margin: 0; }

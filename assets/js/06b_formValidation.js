@@ -7,7 +7,6 @@ window.addEventListener("load", function() {
 		btnsToHide[i].style.visibility = "hidden";
 	}
 
-
 	/* DELETE BUTTON */
 	var dltBtn = document.querySelectorAll(".delete-button"); 					// querySelectorALL
 	for (var i = 0; i < dltBtn.length; i++) {									// use to loop through array of delete buttons
@@ -28,7 +27,6 @@ window.addEventListener("load", function() {
 			}
 		}
 	}
-
 
 	/* CANCEL BUTTON */
 	var cnclBtn = document.querySelectorAll(".cancel-delete-button");
@@ -55,7 +53,6 @@ window.addEventListener("load", function() {
 
 		cnlBtnEvent.preventDefault();
 	}
-
 
 	/* CONFIRM BUTTON */
 	var cnfmBtn = document.querySelectorAll(".confirm-delete-button");
@@ -90,13 +87,6 @@ window.addEventListener("load", function() {
 	}
 
 
-	// HOMEWORK 12/11/15
-	// form submission w/ jquery
-		// work on inline error messages
-		// removing row like we just did
-	// specifically adding and removing elements
-	// and adding and removing the error messages
-
 
 	/* VALIDATE TEXT INPUTS ON BLUR */
 	var allTextInputs = document.querySelectorAll(".text-input");
@@ -118,36 +108,27 @@ window.addEventListener("load", function() {
 	}
 
 
-	/* VALIDATE TEXT INPUT ON FOCUSOUT */
 
-	// reference all text input fields
+	/* VALIDATE TEXT INPUT ON FOCUSOUT */
 	for (var i = 0; i < allTextInputs.length; i++) {
-		// add focusout eventlistener
 		allTextInputs[i].addEventListener("focusout", handleFocusOut);
 		allTextInputs[i].addEventListener("focus", valRemoveErr);
 	}
 
 	// create function to handle focusOut event object
 	function handleFocusOut(onFOEvent) {
-
 		// if on focus out the input field is empty
 		if (onFOEvent.target.value === "") {
-
 			// get parent element of event target
 			var inputParent = onFOEvent.target.parentNode;
-
 			// get child elements of the parent element referenced above
 			var inputChildren = inputParent.children;
-
-			// FOR TESTING: add class 'input-field-valid' to input field
-			// onFOEvent.target.classList.add('input-field-valid');
-
 			// create paragraph for insertion in parent element
 			var inputErr = document.createElement('p');
 			// add 'input-field-valid class to input field error'
 			inputErr.classList.add('input-field-error-msg');
 			// add text for  message
-			inputErr.innerHTML = 'fix it';
+			inputErr.innerHTML = 'This is a required field.';
 			// append message to container div (parent)
 			inputParent.appendChild(inputErr);
 		}
@@ -155,13 +136,10 @@ window.addEventListener("load", function() {
 
 	// create function remove class from field when use clicks back
 	function valRemoveErr(onFOEvent) {
-
 		// input-field-valid — remove 'input-field-valid' class
 		onFOEvent.target.classList.remove('input-field-valid');
-
 		// FOR TESTING: reference error message by looking for element with class 'input-field-valid'
 		var remInputErr = document.querySelector('.input-field-error-msg');
-
 		// if an element with the class 'input-field-valid' isn't found
 		if (remInputErr !== null) {
 			// remove error class from input field
@@ -180,11 +158,8 @@ window.addEventListener("load", function() {
 	submitEvt.addEventListener("submit", handleSubmitClick); 
 
 	function handleSubmitClick(validEvt) {
-
 		var inputValid = true;
-
 		var formObj = document.getElementById('checklist');
-
 		var remErr = formObj.querySelector('.error-message');
 
 		if (remErr !== null) {
@@ -211,7 +186,5 @@ window.addEventListener("load", function() {
 			formObj.appendChild(errorMsg);
 
 		}
-
 	}
-
 });
