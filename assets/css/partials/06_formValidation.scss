@@ -21,4 +21,7 @@
 		margin: 0;
 		@extend .u-cf;
 	}
+	.test {
+		border: solid 10px pink;
+	}
 }

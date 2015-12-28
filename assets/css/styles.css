@@ -1130,3 +1130,5 @@ there.
   color: red;
   font-size: .8125em;
   margin: 0; }
+.ex-06_drill .test {
+  border: solid 10px pink; }
