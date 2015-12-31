@@ -1,3 +1,10 @@
+// HOMEWORK 12/11/15
+// form submission w/ jquery
+	// work on inline error messages
+	// removing row like we just did
+// specifically adding and removing elements
+// and adding and removing the error messages
+
 /* use variable 'jQuery' instead of '$' because it can be used by other stuff
 'ready' is jquery shorthand event */
 jQuery(document).ready(function($) {
@@ -19,11 +26,8 @@ jQuery(document).ready(function($) {
 		var $this = $(this);
 		$this.hide();
 
-		var $btnParent = $(this).parent();
-		var $btnChildren = $btnParent.children();
-
-		$btnChildren.each($('.confirm-delete-button, .cancel-delete-button'), function() {
-			$this.show();
+		$.each($('.confirm-delete-button, .cancel-delete-button'), function() { 
+			$(this).show();
 		});
 	}
 
@@ -70,8 +74,12 @@ jQuery(document).ready(function($) {
 	// -----------------------------------------------------------------
 	// VALIDATE TEXT INPUTS ON BLUR
 	// -----------------------------------------------------------------
-	var $allTextInputs = $('.text-input');
-	$allTextInputs.on('click', valTextInputs);
+	var allTextInputs = document.querySelectorAll(".text-input");
+
+	for (var i = 0; i < allTextInputs.length; i++) {
+		allTextInputs[i].addEventListener("blur", valTextInputs);
+		allTextInputs[i].addEventListener("focus", valRemoveInv);
+	}
 
 	function valTextInputs(validEvt) {
 		if (validEvt.target.value === "") {
