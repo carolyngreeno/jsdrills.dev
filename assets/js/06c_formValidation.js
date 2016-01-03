@@ -2,7 +2,8 @@
 'ready' is jquery shorthand event */
 jQuery(document).ready(function($) {
 
-	var $btnsToHide = $('.confirm-delete-button, .cancel-delete-button');
+	var cnfmCnclDltBtns = '.confirm-delete-button, .cancel-delete-button';
+	var $btnsToHide = $(cnfmCnclDltBtns);
 	$btnsToHide.hide();
 	/* NOTES: https://learn.jquery.com/events/event-delegation/ */
 
@@ -19,12 +20,10 @@ jQuery(document).ready(function($) {
 		var $this = $(this);
 		$this.hide();
 
-		var $btnParent = $(this).parent();
-		var $btnChildren = $btnParent.children();
+		var $btnParent = $this.parent();
+		var $btnChildren = $btnParent.find(cnfmCnclDltBtns);
 
-		$btnChildren.each($('.confirm-delete-button, .cancel-delete-button'), function() {
-			$this.show();
-		});
+		$btnChildren.show();
 	}
 
 
@@ -35,16 +34,17 @@ jQuery(document).ready(function($) {
 	$cnclBtn.on('click', handleCancelClick);
 
 	function handleCancelClick(cnlBtnEvent) {
+		// this is set to the event object's target <var $this = >
+		// jquery version of object <$(this);>
 		var $this = $(this);
 		$this.hide();
 
-		$.each($('.confirm-delete-button'), function() {
-			$(this).hide();
-		});
+		var $btnParent = $this.parent();
+		var $btnChildren = $btnParent.find(cnfmCnclDltBtns);
+		$btnChildren.hide();
 
-		$.each($('.delete-button'), function() {
-			$(this).show();
-		});
+		var $btnChildDlt = $btnParent.find('.delete-button');
+		$btnChildDlt.show();
 
 		cnlBtnEvent.preventDefault();
 	}
@@ -53,14 +53,14 @@ jQuery(document).ready(function($) {
 	// -----------------------------------------------------------------
 	// CONFIRM BUTTON
 	// -----------------------------------------------------------------
-	var $cnfmBtn = $(".confirm-delete-button");
+	var $cnfmBtn = $('.confirm-delete-button');
 	$cnfmBtn.on('click', handleConfirmClick);
 
 	function handleConfirmClick(cnfmBtnEvent) {
 		var $this = $(this);
 		$this.hide();
 
-		var $btnRow = $(this).parent();
+		var $btnRow = $this.parent();
 		var $btnRowParent = $btnRow.parent().hide();
 
 		cnfmBtnEvent.preventDefault();
@@ -70,70 +70,61 @@ jQuery(document).ready(function($) {
 	// -----------------------------------------------------------------
 	// VALIDATE TEXT INPUTS ON BLUR
 	// -----------------------------------------------------------------
-	var $allTextInputs = $('.text-input');
-	$allTextInputs.on('click', valTextInputs);
+	var $txtInputs = $('.text-input');
+
+	$txtInputs.on('blur', valTextInputs);
+	$txtInputs.on('focus', valRemoveInv);
 
 	function valTextInputs(validEvt) {
-		if (validEvt.target.value === "") {
-			validEvt.target.classList.add("required");
-		}
+		var $this = $(this);
 
-		if (validEvt.target.value === "") {
-			var inputParent = validEvt.target.parentNode;
-			var inputChildren = inputParent.children;
-			var inputErr = document.createElement('p');
-			inputErr.classList.add('input-field-error-msg');
-			inputErr.innerHTML = 'This is a required field.';
-			inputParent.appendChild(inputErr);
+		if ($this.val() === '') {
+			$this.addClass('required');
+
+			var $btnRow = $this.parent();
+			var $inputErr = $('<p class="input-field-error-msg">This is a required field.</p>');
+			$btnRow.append($inputErr);
 		}
 	}
 
 	function valRemoveInv(validEvt) {
-		validEvt.target.classList.remove("required");
-		validEvt.target.classList.remove('input-field-valid');
+		var $this = $(this);
+		$this.removeClass('required');
 
-		var remInputErrPar = validEvt.target.parentNode;
-		var remInputErr = remInputErrPar.querySelector('.input-field-error-msg');
-
-		if (remInputErr !== null) {
-			remInputErr.classList.remove('input-field-valid-msg');
-			remInputErrPar.removeChild(remInputErr);
-		}
+		var $btnRow = $this.parent();
+		$btnRow.find('.input-field-error-msg').remove();
 	}
+
 
 	// -----------------------------------------------------------------
 	// SUBMIT FORM
 	// -----------------------------------------------------------------
-	var submitEvt = document.getElementById("checklist");
-	submitEvt.addEventListener("submit", handleSubmitClick); 
+	var $submitEvt = $('#checklist');
+	$submitEvt.on('submit', handleSubmitClick);
 
 	function handleSubmitClick(validEvt) {
 		var inputValid = true;
-		var formObj = document.getElementById('checklist');
-		var remErr = formObj.querySelector('.error-message');
+		var $this = $(this);
+		var $formObj = $('#checklist');
+		var $remErr = $formObj.find('.error-message').remove();
+		var $textInputs = $this.find('.text-input');
 
-		if (remErr !== null) {
-			formObj.removeChild(remErr);
-		}
-
-		for (var i = 0; i < allTextInputs.length; i++) {
-			if (allTextInputs[i].value === "") {
-				allTextInputs[i].classList.add("required");
+		$textInputs.each(function(){
+			var $this = $(this);
+	
+			if ($this.val() === '') {
+				$txtInputs.addClass('required');
 				inputValid = false;
 			} else {
-				allTextInputs[i].classList.remove("required");
+				$txtInputs.removeClass('required');
 			}
-		}
+		});
 
 		if (!inputValid) {
+			var $errorMsg = $('<p class="required">Please fix the errors in the highlighted fields.</p>');
+			$submitEvt.append($errorMsg)
 
-			validEvt.preventDefault();			
-
-			var errorMsg = document.createElement('div');
-			errorMsg.classList.add('error-message');
-			
-			formObj.appendChild(errorMsg);
+			validEvt.preventDefault();
 		}
 	}
-
 });
